@@ -1,4 +1,4 @@
-Pythonista-UI-Games
+Pythonista UI Games
 ===================
 
 Some beginner games made with the UI module in Pythonista. 
