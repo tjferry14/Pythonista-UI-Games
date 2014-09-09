@@ -32,11 +32,6 @@ def guess(sender):
 		v['comp_wins'].text = str(computer_wins)
 		v['player_wins'].text = str(player_wins)
 
-def main():
-		v['textview1'].text =  str('Welcome to the guessing game! A number will be randomly chosen from %i to %i. The player will make a guess, and then the computer will guess. Whoever is closest wins that round!') % (MINIMUM, MAXIMUM)
-		
-		v.present('sheet')			
-
-if __name__ == '__main__':
-		v = ui.load_view('guessing')
-		main()
+v = ui.load_view('guessing')
+v['textview1'].text = str('Welcome to the guessing game! A number will be randomly chosen from %i to %i. The player will make a guess, and then the computer will guess. Whoever is closest wins that round!') % (MINIMUM, MAXIMUM)		
+v.present('sheet')			
