@@ -1,7 +1,7 @@
 Pythonista UI Games
 ===================
 
-Some beginner games made with the UI module in Pythonista. 
+Some beginner games I made with the UI module in Pythonista. 
 
 
 ### rps.py
