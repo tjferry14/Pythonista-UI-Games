@@ -7,11 +7,11 @@ SIGNS = ("Rock", "Paper", "Scissors")
 
 def player_win(player, action, computer):
 	play_effect('Jump_3')
-	v['game_result'].text = "Player Wins! " + player + " " + action + " " + computer + "."
+	v['game_result'].text = "Player Wins! %s %s %s." % (player, action, computer)
 	
 def player_loss(computer, action, player):
 	play_effect('Jump_5')
-	v['game_result'].text = "Computer Wins! " + computer + " " + action + " " + player + "."
+	v['game_result'].text = "Computer Wins! %s %s %s." % (computer, action, player)
 	
 def press(sender):
 	global player_choice
