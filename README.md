@@ -1,12 +1,12 @@
 Pythonista UI Games
 ===================
 
-Some beginner games I made with the UI module in Pythonista. 
+Some beginner games I made with the UI module in Pythonista. Most are WIP.
 
 
 ### rps.py
 
-A rock, paper, scissors game. _WIP_
+A rock, paper, scissors game. 
 
 ### guessing.py
 
