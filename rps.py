@@ -15,7 +15,7 @@ def player_loss(computer, action, player):
 	
 def press(sender):
 	global player_choice
-	player_choice = sender.title
+	player_choice = sender.name if sender.title == '' else sender.title
 	v['outcome'].text = player_choice
 	generate_outcome()
 	
@@ -49,3 +49,6 @@ def generate_outcome():
 
 v = ui.load_view('rps')
 v.present('sheet')
+v['Rock'].image = ui.Image.named('PC_Rock').with_rendering_mode(ui.RENDERING_MODE_ORIGINAL)
+v['Paper'].image = ui.Image.named('Page_With_Curl').with_rendering_mode(ui.RENDERING_MODE_ORIGINAL)
+v['Scissors'].image = ui.Image.named('Scissors').with_rendering_mode(ui.RENDERING_MODE_ORIGINAL)
