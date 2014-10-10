@@ -1,18 +1,28 @@
 # coding: utf-8
 from random import choice
 from sound import play_effect
+from console import hud_alert
 import ui
 
 SIGNS = ("Rock", "Paper", "Scissors") 
+global player_wins, computer_wins
+player_wins = computer_wins = 0
 
 def player_win(player, action, computer):
+	global player_wins, computer_wins
+	player_wins = player_wins + 1
 	play_effect('Jump_3')
 	v['game_result'].text = "Player Wins! %s %s %s." % (player, action, computer)
 	
 def player_loss(computer, action, player):
+	global player_wins, computer_wins
+	computer_wins = computer_wins + 1
 	play_effect('Jump_5')
 	v['game_result'].text = "Computer Wins! %s %s %s." % (computer, action, player)
 	
+def stats(sender):
+	hud_alert('Player Wins: ' + str(player_wins) + ' Computer Wins: ' + str(computer_wins), 'info', 1.5)
+
 def press(sender):
 	global player_choice
 	player_choice = sender.name if sender.title == '' else sender.title
@@ -48,7 +58,14 @@ def generate_outcome():
 			v['game_result'].text = "Whoops! This wasn\'t supposed to happen!"
 
 v = ui.load_view('rps')
+
+stats_button = ui.ButtonItem()
+stats_button.title = 'Stats'
+stats_button.action = stats
+
 v.present('sheet')
+
+v.right_button_items = [stats_button]
 v['Rock'].image = ui.Image.named('PC_Rock').with_rendering_mode(ui.RENDERING_MODE_ORIGINAL)
 v['Paper'].image = ui.Image.named('Page_With_Curl').with_rendering_mode(ui.RENDERING_MODE_ORIGINAL)
 v['Scissors'].image = ui.Image.named('Scissors').with_rendering_mode(ui.RENDERING_MODE_ORIGINAL)
