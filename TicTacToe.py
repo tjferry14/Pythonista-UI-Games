@@ -9,7 +9,7 @@ class TicTacToeView(ui.View):
         self.image_o = ui.Image.named('ionicons-ios7-circle-outline-256')
 
     def did_load(self):
-        buttons = ['square{}'.format(i) for i in xrange(1,10)]
+        buttons = ['square{}'.format(i) for i in range(1,10)]
         self.squares = [self[button] for button in buttons]
         for square in self.squares:
             square.action = self.square_tapped
@@ -44,7 +44,7 @@ class TicTacToeView(ui.View):
                        (1, 4, 7), (2, 5, 8), (3, 6, 9),
                        (1, 5, 9), (3, 5, 7))
         for ttt in tic_tac_toe:
-            a, b, c = [self.squares[ttt[i]-1] for i in xrange(3)]
+            a, b, c = [self.squares[ttt[i]-1] for i in range(3)]
             if a.image and a.image == b.image and a.image == c.image:
                 return 'X' if a.image == self.image_x else 'O'
         return None
